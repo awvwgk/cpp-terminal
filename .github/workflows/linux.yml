@@ -3,7 +3,13 @@ name: Linux
 
 on:
   push:
+    paths-ignore:
+      - '.github/workflows/**'
+      - '!.github/workflows/linux.yml'
   pull_request:
+    paths-ignore:
+      - '.github/workflows/**'
+      - '!.github/workflows/linux.yml'
   workflow_dispatch:
 
 concurrency:
@@ -122,6 +128,9 @@ jobs:
             standard: 20
           # 7 has problem
           - version: 7
+            standard: 20
+          # 14 has problem too ?!?
+          - version: 14
             standard: 20
 
     steps:
